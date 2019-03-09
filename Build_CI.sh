@@ -8,8 +8,6 @@ export KBUILD_BUILD_HOST="Peace_boys";
 STRIP="arm-linux-gnueabihf/bin/arm-linux-gnueabihf-strip";
 export CCOMPILE=$CROSS_COMPILE;
 export CROSS_COMPILE="/usr/bin/ccache arm-linux-gnueabihf-" ;
-cd arm-linux-gnueabihf/bin
-ls -l
-export PATH=$PATH:arm-linux-gnueabihf/bin ;
+export PATH=$PATH:./arm-linux-gnueabihf/bin ;
 make alldefconfig;
 make -j$(nproc --all);
