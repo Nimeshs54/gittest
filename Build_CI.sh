@@ -10,6 +10,6 @@ STRIP="arm-linux-gnueabihf/bin/arm-linux-gnueabihf-strip";
 export CCOMPILE=$CROSS_COMPILE;
 export CROSS_COMPILE="/usr/bin/ccache arm-linux-gnueabihf-" ;
 pwd
-export PATH=$PATH:~/arm-linux-gnueabihf/bin ;
+export PATH=$PATH:/home/travis/build/manu490/GT-I9082_Stock_Kernel/arm-linux-gnueabihf/bin ;
 make alldefconfig;
 make -j$(nproc --all);
