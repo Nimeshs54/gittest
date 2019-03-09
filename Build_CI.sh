@@ -1,7 +1,5 @@
-cd /home/travis/build/manu490/GT-I9082_Stock_Kernel/
 wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.4.1-2019.02-i686_arm-linux-gnueabihf.tar.xz
 tar xf gcc-linaro-7.4.1-2019.02-i686_arm-linux-gnueabihf.tar.xz
-#export PATH=$PATH:/home/travis/build/manu490/gcc-linaro-7.4.1-2019.02-i686_arm-linux-gnueabihf/bin
 export CROSS_COMPILE="/usr/bin/ccache ./gcc-linaro-7.4.1-2019.02-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-" ;
 export ARCH=arm;
 export SUBARCH=armhf;
