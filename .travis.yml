@@ -9,9 +9,9 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get install -qq g++-8-arm-linux-gnueabihf
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/arm-linux-gnueabihf-gcc-8
-  #- sudo bash ./fix_gcc.sh
+  - sudo apt-get install -qq g++-7
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 90
+  - sudo bash ./fix_gcc.sh
 
 script:
   - bash Build_CI.sh
