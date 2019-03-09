@@ -12,5 +12,5 @@ STRIP="gcc-linaro-7.4.1-2019.02-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf
 export CCOMPILE=$CROSS_COMPILE;
 export CROSS_COMPILE="/usr/bin/ccache arm-linux-gnueabihf-" ;
 export PATH=$PATH:./gcc-linaro-7.4.1-2019.02-i686_arm-linux-gnueabihf/bin/ ;
-make vexpress_defconfig;
+make make ${PLATFORM}_defconfig;
 make -j$(nproc --all);
