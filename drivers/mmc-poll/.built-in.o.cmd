@@ -1,0 +1,1 @@
+cmd_drivers/mmc-poll/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/mmc-poll/built-in.o drivers/mmc-poll/mmc_poll.o drivers/mmc-poll/kona_mmc.o drivers/mmc-poll/mmc_poll_stack.o 

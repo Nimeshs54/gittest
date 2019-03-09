@@ -1,4 +1,4 @@
-cmd_arch/arm/kernel/vmlinux.lds := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -E -Wp,-MD,arch/arm/kernel/.vmlinux.lds.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-versatile/include -Iarch/arm/plat-versatile/include   -DTEXT_OFFSET=0x00008000 -P -C -Uarm -D__ASSEMBLY__ -DLINKER_SCRIPT -o arch/arm/kernel/vmlinux.lds arch/arm/kernel/vmlinux.lds.S
+cmd_arch/arm/kernel/vmlinux.lds := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -E -Wp,-MD,arch/arm/kernel/.vmlinux.lds.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-capri/include -Iarch/arm/plat-kona/include   -DTEXT_OFFSET=0x00008000 -P -C -Uarm -D__ASSEMBLY__ -DLINKER_SCRIPT -o arch/arm/kernel/vmlinux.lds arch/arm/kernel/vmlinux.lds.S
 
 source_arch/arm/kernel/vmlinux.lds := arch/arm/kernel/vmlinux.lds.S
 
@@ -54,7 +54,8 @@ deps_arch/arm/kernel/vmlinux.lds := \
   include/asm-generic/int-ll64.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/bitsperlong.h \
   include/asm-generic/bitsperlong.h \
-  arch/arm/mach-versatile/include/mach/memory.h \
+  arch/arm/plat-kona/include/mach/memory.h \
+  arch/arm/plat-kona/include/mach/io.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/sizes.h \
   include/asm-generic/sizes.h \
   include/asm-generic/memory_model.h \

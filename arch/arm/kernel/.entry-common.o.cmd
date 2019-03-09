@@ -1,4 +1,4 @@
-cmd_arch/arm/kernel/entry-common.o := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -Wp,-MD,arch/arm/kernel/.entry-common.o.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-versatile/include -Iarch/arm/plat-versatile/include -D__ASSEMBLY__ -mabi=apcs-gnu -mno-thumb-interwork  -D__LINUX_ARM_ARCH__=5 -march=armv5te -mtune=arm9tdmi -include asm/unified.h -mfloat-abi=soft        -c -o arch/arm/kernel/entry-common.o arch/arm/kernel/entry-common.S
+cmd_arch/arm/kernel/entry-common.o := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -Wp,-MD,arch/arm/kernel/.entry-common.o.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-capri/include -Iarch/arm/plat-kona/include -D__ASSEMBLY__ -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables  -D__LINUX_ARM_ARCH__=7 -march=armv7-a  -include asm/unified.h -mfpu=vfp3 -mfloat-abi=softfp  -gdwarf-2        -c -o arch/arm/kernel/entry-common.o arch/arm/kernel/entry-common.S
 
 source_arch/arm/kernel/entry-common.o := arch/arm/kernel/entry-common.S
 
@@ -22,14 +22,47 @@ deps_arch/arm/kernel/entry-common.o := \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/unistd.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/ftrace.h \
     $(wildcard include/config/arm/unwind.h) \
-  arch/arm/mach-versatile/include/mach/entry-macro.S \
-  arch/arm/mach-versatile/include/mach/hardware.h \
+  arch/arm/plat-kona/include/mach/entry-macro.S \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/hardware/gic.h \
+  include/linux/compiler.h \
+    $(wildcard include/config/sparse/rcu/pointer.h) \
+    $(wildcard include/config/trace/branch/profiling.h) \
+    $(wildcard include/config/profile/all/branches.h) \
+    $(wildcard include/config/enable/must/check.h) \
+    $(wildcard include/config/enable/warn/deprecated.h) \
+  arch/arm/mach-capri/include/mach/io_map.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/memory.h \
+    $(wildcard include/config/mmu.h) \
+    $(wildcard include/config/page/offset.h) \
+    $(wildcard include/config/highmem.h) \
+    $(wildcard include/config/dram/size.h) \
+    $(wildcard include/config/dram/base.h) \
+    $(wildcard include/config/have/tcm.h) \
+    $(wildcard include/config/arm/patch/phys/virt.h) \
+    $(wildcard include/config/arm/patch/phys/virt/16bit.h) \
+  include/linux/const.h \
+  include/linux/types.h \
+    $(wildcard include/config/uid16.h) \
+    $(wildcard include/config/lbdaf.h) \
+    $(wildcard include/config/arch/dma/addr/t/64bit.h) \
+    $(wildcard include/config/phys/addr/t/64bit.h) \
+    $(wildcard include/config/64bit.h) \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/types.h \
+  include/asm-generic/int-ll64.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/bitsperlong.h \
+  include/asm-generic/bitsperlong.h \
+  arch/arm/plat-kona/include/mach/memory.h \
+  arch/arm/plat-kona/include/mach/io.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/sizes.h \
   include/asm-generic/sizes.h \
-  arch/arm/mach-versatile/include/mach/platform.h \
-    $(wildcard include/config/arch/versatile/pb.h) \
-    $(wildcard include/config/mach/versatile/ab.h) \
-  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/hardware/vic.h \
+  include/asm-generic/memory_model.h \
+    $(wildcard include/config/flatmem.h) \
+    $(wildcard include/config/discontigmem.h) \
+    $(wildcard include/config/sparsemem/vmemmap.h) \
+    $(wildcard include/config/sparsemem.h) \
+  arch/arm/mach-capri/include/mach/rdb/brcm_rdb_sysmap.h \
+    $(wildcard include/config/base/addr.h) \
+  arch/arm/mach-capri/include/mach/rdb/brcm_rdb_ehci.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/unwind.h \
   arch/arm/kernel/entry-header.S \
     $(wildcard include/config/cpu/v6.h) \
@@ -39,12 +72,6 @@ deps_arch/arm/kernel/entry-common.o := \
   include/linux/init.h \
     $(wildcard include/config/modules.h) \
     $(wildcard include/config/hotplug.h) \
-  include/linux/compiler.h \
-    $(wildcard include/config/sparse/rcu/pointer.h) \
-    $(wildcard include/config/trace/branch/profiling.h) \
-    $(wildcard include/config/profile/all/branches.h) \
-    $(wildcard include/config/enable/must/check.h) \
-    $(wildcard include/config/enable/warn/deprecated.h) \
   include/linux/linkage.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/linkage.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/assembler.h \

@@ -1,4 +1,4 @@
-cmd_init/calibrate.o := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -Wp,-MD,init/.calibrate.o.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-versatile/include -Iarch/arm/plat-versatile/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=apcs-gnu -mno-thumb-interwork -D__LINUX_ARM_ARCH__=5 -march=armv5te -mtune=arm9tdmi -Uarm -mfloat-abi=soft -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(calibrate)"  -D"KBUILD_MODNAME=KBUILD_STR(calibrate)" -c -o init/calibrate.o init/calibrate.c
+cmd_init/calibrate.o := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -Wp,-MD,init/.calibrate.o.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-capri/include -Iarch/arm/plat-kona/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -Uarm -mfpu=vfp3 -mfloat-abi=softfp -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fomit-frame-pointer -g -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(calibrate)"  -D"KBUILD_MODNAME=KBUILD_STR(calibrate)" -c -o init/.tmp_calibrate.o init/calibrate.c
 
 source_init/calibrate.o := init/calibrate.c
 
@@ -56,29 +56,10 @@ deps_init/calibrate.o := \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/outercache.h \
     $(wildcard include/config/outer/cache/sync.h) \
     $(wildcard include/config/outer/cache.h) \
-  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/memory.h \
-    $(wildcard include/config/mmu.h) \
-    $(wildcard include/config/page/offset.h) \
-    $(wildcard include/config/thumb2/kernel.h) \
-    $(wildcard include/config/highmem.h) \
-    $(wildcard include/config/dram/size.h) \
-    $(wildcard include/config/dram/base.h) \
-    $(wildcard include/config/have/tcm.h) \
-    $(wildcard include/config/arm/patch/phys/virt.h) \
-    $(wildcard include/config/arm/patch/phys/virt/16bit.h) \
-  include/linux/const.h \
-  arch/arm/mach-versatile/include/mach/memory.h \
-  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/sizes.h \
-  include/asm-generic/sizes.h \
-  include/asm-generic/memory_model.h \
-    $(wildcard include/config/flatmem.h) \
-    $(wildcard include/config/discontigmem.h) \
-    $(wildcard include/config/sparsemem/vmemmap.h) \
-    $(wildcard include/config/sparsemem.h) \
   include/asm-generic/cmpxchg-local.h \
-  include/asm-generic/cmpxchg.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/bug.h \
     $(wildcard include/config/bug.h) \
+    $(wildcard include/config/thumb2/kernel.h) \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/generic/bug.h) \
@@ -148,33 +129,66 @@ deps_init/calibrate.o := \
     $(wildcard include/config/debug/list.h) \
   include/linux/poison.h \
     $(wildcard include/config/illegal/pointer/value.h) \
+  include/linux/const.h \
   include/linux/stringify.h \
   include/linux/bottom_half.h \
   include/linux/spinlock_types.h \
-  include/linux/spinlock_types_up.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/spinlock_types.h \
   include/linux/lockdep.h \
     $(wildcard include/config/lockdep.h) \
     $(wildcard include/config/lock/stat.h) \
     $(wildcard include/config/arch/capri.h) \
     $(wildcard include/config/prove/rcu.h) \
   include/linux/rwlock_types.h \
-  include/linux/spinlock_up.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/spinlock.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/processor.h \
     $(wildcard include/config/have/hw/breakpoint.h) \
+    $(wildcard include/config/mmu.h) \
     $(wildcard include/config/arm/errata/754327.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/hw_breakpoint.h \
   include/linux/rwlock.h \
-  include/linux/spinlock_api_up.h \
+  include/linux/spinlock_api_smp.h \
+    $(wildcard include/config/inline/spin/lock.h) \
+    $(wildcard include/config/inline/spin/lock/bh.h) \
+    $(wildcard include/config/inline/spin/lock/irq.h) \
+    $(wildcard include/config/inline/spin/lock/irqsave.h) \
+    $(wildcard include/config/inline/spin/trylock.h) \
+    $(wildcard include/config/inline/spin/trylock/bh.h) \
+    $(wildcard include/config/inline/spin/unlock.h) \
+    $(wildcard include/config/inline/spin/unlock/bh.h) \
+    $(wildcard include/config/inline/spin/unlock/irq.h) \
+    $(wildcard include/config/inline/spin/unlock/irqrestore.h) \
+  include/linux/rwlock_api_smp.h \
+    $(wildcard include/config/inline/read/lock.h) \
+    $(wildcard include/config/inline/write/lock.h) \
+    $(wildcard include/config/inline/read/lock/bh.h) \
+    $(wildcard include/config/inline/write/lock/bh.h) \
+    $(wildcard include/config/inline/read/lock/irq.h) \
+    $(wildcard include/config/inline/write/lock/irq.h) \
+    $(wildcard include/config/inline/read/lock/irqsave.h) \
+    $(wildcard include/config/inline/write/lock/irqsave.h) \
+    $(wildcard include/config/inline/read/trylock.h) \
+    $(wildcard include/config/inline/write/trylock.h) \
+    $(wildcard include/config/inline/read/unlock.h) \
+    $(wildcard include/config/inline/write/unlock.h) \
+    $(wildcard include/config/inline/read/unlock/bh.h) \
+    $(wildcard include/config/inline/write/unlock/bh.h) \
+    $(wildcard include/config/inline/read/unlock/irq.h) \
+    $(wildcard include/config/inline/write/unlock/irq.h) \
+    $(wildcard include/config/inline/read/unlock/irqrestore.h) \
+    $(wildcard include/config/inline/write/unlock/irqrestore.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/atomic.h \
     $(wildcard include/config/generic/atomic64.h) \
-  include/asm-generic/atomic64.h \
   include/asm-generic/atomic-long.h \
   include/linux/timex.h \
   include/linux/param.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/param.h \
     $(wildcard include/config/hz.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/timex.h \
-  arch/arm/mach-versatile/include/mach/timex.h \
+  arch/arm/plat-kona/include/mach/timex.h \
+    $(wildcard include/config/mach/samoa/fpga.h) \
+    $(wildcard include/config/android.h) \
+    $(wildcard include/config/mach/capri/fpga.h) \
   include/linux/delay.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/delay.h \
   include/linux/smp.h \
@@ -195,6 +209,7 @@ deps_init/calibrate.o := \
   include/linux/string.h \
     $(wildcard include/config/binary/printf.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/string.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/smp.h \
 
 init/calibrate.o: $(deps_init/calibrate.o)
 

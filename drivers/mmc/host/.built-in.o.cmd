@@ -1,0 +1,1 @@
+cmd_drivers/mmc/host/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/mmc/host/built-in.o drivers/mmc/host/sdhci.o drivers/mmc/host/sdhci-pltfm-kona.o drivers/mmc/host/sdio-wifi.o 

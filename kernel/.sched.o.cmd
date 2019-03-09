@@ -1,4 +1,4 @@
-cmd_kernel/sched.o := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -Wp,-MD,kernel/.sched.o.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-versatile/include -Iarch/arm/plat-versatile/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=apcs-gnu -mno-thumb-interwork -D__LINUX_ARM_ARCH__=5 -march=armv5te -mtune=arm9tdmi -Uarm -mfloat-abi=soft -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO -fno-omit-frame-pointer    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(sched)"  -D"KBUILD_MODNAME=KBUILD_STR(sched)" -c -o kernel/sched.o kernel/sched.c
+cmd_kernel/sched.o := /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-gcc -Wp,-MD,kernel/.sched.o.d  -nostdinc -isystem /opt/toolchains/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-capri/include -Iarch/arm/plat-kona/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -Uarm -mfpu=vfp3 -mfloat-abi=softfp -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fomit-frame-pointer -g -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO -fno-omit-frame-pointer    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(sched)"  -D"KBUILD_MODNAME=KBUILD_STR(sched)" -c -o kernel/.tmp_sched.o kernel/sched.c
 
 source_kernel/sched.o := kernel/sched.c
 
@@ -135,21 +135,7 @@ deps_kernel/sched.o := \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/outercache.h \
     $(wildcard include/config/outer/cache/sync.h) \
     $(wildcard include/config/outer/cache.h) \
-  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/memory.h \
-    $(wildcard include/config/page/offset.h) \
-    $(wildcard include/config/thumb2/kernel.h) \
-    $(wildcard include/config/dram/size.h) \
-    $(wildcard include/config/dram/base.h) \
-    $(wildcard include/config/have/tcm.h) \
-    $(wildcard include/config/arm/patch/phys/virt.h) \
-    $(wildcard include/config/arm/patch/phys/virt/16bit.h) \
-  include/linux/const.h \
-  arch/arm/mach-versatile/include/mach/memory.h \
-  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/sizes.h \
-  include/asm-generic/sizes.h \
-  include/asm-generic/memory_model.h \
   include/asm-generic/cmpxchg-local.h \
-  include/asm-generic/cmpxchg.h \
   include/asm-generic/bitops/non-atomic.h \
   include/asm-generic/bitops/fls64.h \
   include/asm-generic/bitops/sched.h \
@@ -175,6 +161,7 @@ deps_kernel/sched.o := \
     $(wildcard include/config/debug/list.h) \
   include/linux/poison.h \
     $(wildcard include/config/illegal/pointer/value.h) \
+  include/linux/const.h \
   include/linux/kernel.h \
     $(wildcard include/config/preempt/voluntary.h) \
     $(wildcard include/config/prove/locking.h) \
@@ -194,6 +181,7 @@ deps_kernel/sched.o := \
   include/linux/dynamic_debug.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/bug.h \
     $(wildcard include/config/bug.h) \
+    $(wildcard include/config/thumb2/kernel.h) \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/generic/bug.h) \
@@ -202,22 +190,50 @@ deps_kernel/sched.o := \
   include/linux/stringify.h \
   include/linux/bottom_half.h \
   include/linux/spinlock_types.h \
-  include/linux/spinlock_types_up.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/spinlock_types.h \
   include/linux/lockdep.h \
     $(wildcard include/config/lock/stat.h) \
     $(wildcard include/config/arch/capri.h) \
     $(wildcard include/config/prove/rcu.h) \
   include/linux/rwlock_types.h \
-  include/linux/spinlock_up.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/spinlock.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/processor.h \
     $(wildcard include/config/have/hw/breakpoint.h) \
     $(wildcard include/config/arm/errata/754327.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/hw_breakpoint.h \
   include/linux/rwlock.h \
-  include/linux/spinlock_api_up.h \
+  include/linux/spinlock_api_smp.h \
+    $(wildcard include/config/inline/spin/lock.h) \
+    $(wildcard include/config/inline/spin/lock/bh.h) \
+    $(wildcard include/config/inline/spin/lock/irq.h) \
+    $(wildcard include/config/inline/spin/lock/irqsave.h) \
+    $(wildcard include/config/inline/spin/trylock.h) \
+    $(wildcard include/config/inline/spin/trylock/bh.h) \
+    $(wildcard include/config/inline/spin/unlock.h) \
+    $(wildcard include/config/inline/spin/unlock/bh.h) \
+    $(wildcard include/config/inline/spin/unlock/irq.h) \
+    $(wildcard include/config/inline/spin/unlock/irqrestore.h) \
+  include/linux/rwlock_api_smp.h \
+    $(wildcard include/config/inline/read/lock.h) \
+    $(wildcard include/config/inline/write/lock.h) \
+    $(wildcard include/config/inline/read/lock/bh.h) \
+    $(wildcard include/config/inline/write/lock/bh.h) \
+    $(wildcard include/config/inline/read/lock/irq.h) \
+    $(wildcard include/config/inline/write/lock/irq.h) \
+    $(wildcard include/config/inline/read/lock/irqsave.h) \
+    $(wildcard include/config/inline/write/lock/irqsave.h) \
+    $(wildcard include/config/inline/read/trylock.h) \
+    $(wildcard include/config/inline/write/trylock.h) \
+    $(wildcard include/config/inline/read/unlock.h) \
+    $(wildcard include/config/inline/write/unlock.h) \
+    $(wildcard include/config/inline/read/unlock/bh.h) \
+    $(wildcard include/config/inline/write/unlock/bh.h) \
+    $(wildcard include/config/inline/read/unlock/irq.h) \
+    $(wildcard include/config/inline/write/unlock/irq.h) \
+    $(wildcard include/config/inline/read/unlock/irqrestore.h) \
+    $(wildcard include/config/inline/write/unlock/irqrestore.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/atomic.h \
     $(wildcard include/config/generic/atomic64.h) \
-  include/asm-generic/atomic64.h \
   include/asm-generic/atomic-long.h \
   include/linux/wait.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/current.h \
@@ -250,6 +266,18 @@ deps_kernel/sched.o := \
     $(wildcard include/config/cpu/xscale.h) \
     $(wildcard include/config/cpu/copy/v6.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/glue.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/memory.h \
+    $(wildcard include/config/page/offset.h) \
+    $(wildcard include/config/dram/size.h) \
+    $(wildcard include/config/dram/base.h) \
+    $(wildcard include/config/have/tcm.h) \
+    $(wildcard include/config/arm/patch/phys/virt.h) \
+    $(wildcard include/config/arm/patch/phys/virt/16bit.h) \
+  arch/arm/plat-kona/include/mach/memory.h \
+  arch/arm/plat-kona/include/mach/io.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/sizes.h \
+  include/asm-generic/sizes.h \
+  include/asm-generic/memory_model.h \
   include/asm-generic/getorder.h \
   include/linux/memory_hotplug.h \
     $(wildcard include/config/memory/hotremove.h) \
@@ -269,6 +297,7 @@ deps_kernel/sched.o := \
     $(wildcard include/config/disable/obsolete/cpumask/functions.h) \
   include/linux/smp.h \
     $(wildcard include/config/use/generic/smp/helpers.h) \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/smp.h \
   include/linux/percpu.h \
     $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
     $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
@@ -328,7 +357,7 @@ deps_kernel/sched.o := \
     $(wildcard include/config/cpu/feroceon.h) \
     $(wildcard include/config/cpu/v6k.h) \
     $(wildcard include/config/cpu/v7.h) \
-  arch/arm/mach-versatile/include/mach/vmalloc.h \
+  arch/arm/plat-kona/include/mach/vmalloc.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/pgtable-hwdef.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/tlbflush.h \
     $(wildcard include/config/smp/on/up.h) \
@@ -380,9 +409,15 @@ deps_kernel/sched.o := \
   include/linux/math64.h \
   include/linux/param.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/timex.h \
-  arch/arm/mach-versatile/include/mach/timex.h \
+  arch/arm/plat-kona/include/mach/timex.h \
+    $(wildcard include/config/mach/samoa/fpga.h) \
+    $(wildcard include/config/android.h) \
+    $(wildcard include/config/mach/capri/fpga.h) \
   include/linux/jiffies.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/cputime.h \
+  arch/arm/mach-capri/include/mach/cputime.h \
+  include/linux/atomic.h \
+    $(wildcard include/config/arch/has/atomic/or.h) \
   include/asm-generic/cputime.h \
   include/linux/sem.h \
   include/linux/ipc.h \
@@ -398,7 +433,7 @@ deps_kernel/sched.o := \
   include/linux/debugobjects.h \
     $(wildcard include/config/debug/objects.h) \
     $(wildcard include/config/debug/objects/free.h) \
-  include/linux/rcutiny.h \
+  include/linux/rcutree.h \
   include/linux/signal.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/signal.h \
   include/asm-generic/signal-defs.h \
@@ -491,10 +526,9 @@ deps_kernel/sched.o := \
   include/linux/nmi.h \
     $(wildcard include/config/hardlockup/detector.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/irq.h \
-  arch/arm/mach-versatile/include/mach/irqs.h \
-  arch/arm/mach-versatile/include/mach/platform.h \
-    $(wildcard include/config/arch/versatile/pb.h) \
-    $(wildcard include/config/mach/versatile/ab.h) \
+  arch/arm/plat-kona/include/mach/irqs.h \
+    $(wildcard include/config/gpio/pca953x.h) \
+    $(wildcard include/config/mach/rhea/ray/edn1x.h) \
   include/linux/uaccess.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/uaccess.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/unified.h \
@@ -577,6 +611,20 @@ deps_kernel/sched.o := \
   include/linux/perf_event.h \
     $(wildcard include/config/perf/use/vmalloc.h) \
     $(wildcard include/config/cgroup/perf.h) \
+  include/linux/cgroup.h \
+  include/linux/cgroupstats.h \
+  include/linux/taskstats.h \
+  include/linux/prio_heap.h \
+  include/linux/idr.h \
+  include/linux/cgroup_subsys.h \
+    $(wildcard include/config/cgroup/debug.h) \
+    $(wildcard include/config/cgroup/device.h) \
+    $(wildcard include/config/cgroup/freezer.h) \
+    $(wildcard include/config/net/cls/cgroup.h) \
+    $(wildcard include/config/blk/cgroup.h) \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/perf_event.h \
+  /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/local64.h \
+  include/asm-generic/local64.h \
   include/linux/pid_namespace.h \
     $(wildcard include/config/pid/ns.h) \
   include/linux/nsproxy.h \
@@ -610,7 +658,6 @@ deps_kernel/sched.o := \
   include/linux/fsnotify.h \
   include/linux/fsnotify_backend.h \
     $(wildcard include/config/fanotify/access/permissions.h) \
-  include/linux/idr.h \
   include/linux/audit.h \
     $(wildcard include/config/change.h) \
   include/linux/slab.h \
@@ -640,10 +687,8 @@ deps_kernel/sched.o := \
   include/linux/profile.h \
     $(wildcard include/config/profiling.h) \
   include/linux/freezer.h \
-    $(wildcard include/config/cgroup/freezer.h) \
   include/linux/vmalloc.h \
   include/linux/blkdev.h \
-    $(wildcard include/config/blk/cgroup.h) \
     $(wildcard include/config/blk/dev/bsg.h) \
     $(wildcard include/config/blk/dev/throttling.h) \
     $(wildcard include/config/bounce.h) \
@@ -674,7 +719,6 @@ deps_kernel/sched.o := \
   include/linux/ioprio.h \
   include/linux/iocontext.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/io.h \
-  arch/arm/mach-versatile/include/mach/io.h \
   include/linux/bsg.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/scatterlist.h \
   include/asm-generic/scatterlist.h \
@@ -684,10 +728,6 @@ deps_kernel/sched.o := \
   include/linux/delay.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/delay.h \
   include/linux/cpuset.h \
-  include/linux/cgroup.h \
-  include/linux/cgroupstats.h \
-  include/linux/taskstats.h \
-  include/linux/prio_heap.h \
   include/linux/proc_fs.h \
     $(wildcard include/config/proc/devicetree.h) \
     $(wildcard include/config/proc/kcore.h) \
@@ -735,11 +775,22 @@ deps_kernel/sched.o := \
     $(wildcard include/config/cgroup/mem/cont.h) \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/pgalloc.h \
   /home/manu/Downloads/Major_Project/Kernel_GT-I9082/arch/arm/include/asm/mutex.h \
-  include/asm-generic/mutex-xchg.h \
   kernel/sched_cpupri.h \
   kernel/workqueue_sched.h \
   kernel/sched_autogroup.h \
   include/trace/events/sched.h \
+  include/trace/ftrace.h \
+  include/linux/broadcom/knllog.h \
+    $(wildcard include/config/bcm/knllog/support.h) \
+  arch/arm/mach-capri/include/mach/sec_debug.h \
+    $(wildcard include/config/sec/debug/sched/log.h) \
+    $(wildcard include/config/sec/debug/irq/exit/log.h) \
+    $(wildcard include/config/sec/debug/semaphore/log.h) \
+    $(wildcard include/config/sec/debug/auxiliary/log.h) \
+  arch/arm/mach-capri/include/mach/io_map.h \
+  arch/arm/mach-capri/include/mach/rdb/brcm_rdb_sysmap.h \
+    $(wildcard include/config/base/addr.h) \
+  arch/arm/mach-capri/include/mach/rdb/brcm_rdb_ehci.h \
   kernel/sched_features.h \
   kernel/sched_stats.h \
   kernel/sched_idletask.c \
@@ -747,6 +798,10 @@ deps_kernel/sched.o := \
   kernel/sched_rt.c \
   kernel/sched_autogroup.c \
   kernel/sched_stoptask.c \
+  kernel/sched_debug.c \
+    $(wildcard include/config/x86.h) \
+  include/linux/utsname.h \
+    $(wildcard include/config/uts/ns.h) \
 
 kernel/sched.o: $(deps_kernel/sched.o)
 

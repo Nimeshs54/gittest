@@ -1,0 +1,1 @@
+cmd_drivers/mfd/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/mfd/built-in.o drivers/mfd/mfd-core.o drivers/mfd/bcmpmu-i2c.o drivers/mfd/bcmpmu-core.o drivers/mfd/bcmpmu-irq.o drivers/mfd/bcmpmu-accy.o drivers/mfd/bcmpmu-bcm59056-map.o 

@@ -7,7 +7,7 @@
  *
  */
 
-#define TSK_ACTIVE_MM 164 /* offsetof(struct task_struct, active_mm)	@ */
+#define TSK_ACTIVE_MM 232 /* offsetof(struct task_struct, active_mm)	@ */
 
 #define TI_FLAGS 0 /* offsetof(struct thread_info, flags)	@ */
 #define TI_PREEMPT 4 /* offsetof(struct thread_info, preempt_count)	@ */
@@ -20,7 +20,8 @@
 #define TI_USED_CP 80 /* offsetof(struct thread_info, used_cp)	@ */
 #define TI_TP_VALUE 96 /* offsetof(struct thread_info, tp_value)	@ */
 #define TI_FPSTATE 288 /* offsetof(struct thread_info, fpstate)	@ */
-#define TI_VFPSTATE 428 /* offsetof(struct thread_info, vfpstate)	@ */
+#define TI_VFPSTATE 432 /* offsetof(struct thread_info, vfpstate)	@ */
+#define TI_THUMBEE_STATE 712 /* offsetof(struct thread_info, thumbee_state)	@ */
 
 #define S_R0 0 /* offsetof(struct pt_regs, ARM_r0)	@ */
 #define S_R1 4 /* offsetof(struct pt_regs, ARM_r1)	@ */
@@ -42,6 +43,8 @@
 #define S_OLD_R0 68 /* offsetof(struct pt_regs, ARM_ORIG_r0)	@ */
 #define S_FRAME_SIZE 72 /* sizeof(struct pt_regs)	@ */
 
+#define MM_CONTEXT_ID 352 /* offsetof(struct mm_struct, context.id)	@ */
+
 #define VMA_VM_MM 0 /* offsetof(struct vm_area_struct, vm_mm)	@ */
 #define VMA_VM_FLAGS 24 /* offsetof(struct vm_area_struct, vm_flags)	@ */
 
@@ -60,6 +63,7 @@
 #define PROCINFO_MM_MMUFLAGS 8 /* offsetof(struct proc_info_list, __cpu_mm_mmu_flags)	@ */
 #define PROCINFO_IO_MMUFLAGS 12 /* offsetof(struct proc_info_list, __cpu_io_mmu_flags)	@ */
 
+#define CACHE_FLUSH_KERN_ALL 4 /* offsetof(struct cpu_cache_fns, flush_kern_all)	@ */
 
 #define DMA_BIDIRECTIONAL 0 /* DMA_BIDIRECTIONAL	@ */
 #define DMA_TO_DEVICE 1 /* DMA_TO_DEVICE	@ */
