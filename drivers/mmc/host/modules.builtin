@@ -1,3 +1,0 @@
-kernel/drivers/mmc/host/sdhci.ko
-kernel/drivers/mmc/host/sdhci-pltfm-kona.ko
-kernel/drivers/mmc/host/sdio-wifi.ko

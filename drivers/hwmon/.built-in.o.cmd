@@ -1,1 +1,0 @@
-cmd_drivers/hwmon/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/hwmon/built-in.o drivers/hwmon/hwmon.o drivers/hwmon/kona-tmon.o drivers/hwmon/kona-thermal.o drivers/hwmon/bcmpmu-thermal.o drivers/hwmon/bcmpmu-hwmon.o 

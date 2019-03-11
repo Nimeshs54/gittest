@@ -385,6 +385,7 @@ deps_config := \
 	drivers/char/hw_random/Kconfig \
 	drivers/char/ipmi/Kconfig \
 	drivers/tty/hvc/Kconfig \
+	drivers/char/frandom/Kconfig \
 	drivers/tty/serial/Kconfig \
 	drivers/tty/Kconfig \
 	drivers/char/Kconfig \

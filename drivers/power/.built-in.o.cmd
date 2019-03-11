@@ -1,1 +1,0 @@
-cmd_drivers/power/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/power/built-in.o drivers/power/power_supply.o drivers/power/bcmpmu-chrgr-pb.o drivers/power/bcmpmu-em.o drivers/power/spa_power.o drivers/power/spa_ps.o 

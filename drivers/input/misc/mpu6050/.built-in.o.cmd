@@ -1,1 +1,0 @@
-cmd_drivers/input/misc/mpu6050/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/input/misc/mpu6050/built-in.o drivers/input/misc/mpu6050/mpu6050_input.o drivers/input/misc/mpu6050/mpu6050_selftest.o 

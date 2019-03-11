@@ -122,6 +122,8 @@ config BFIN_OTP_WRITE_ENABLE
 
 	  If unsure, say N.
 
+source "drivers/char/frandom/Kconfig"
+
 config PRINTER
 	tristate "Parallel printer support"
 	depends on PARPORT
@@ -643,4 +645,3 @@ config BCM_GPS
 	  If unsure, say N.
 
 endmenu
-

@@ -1,1 +1,0 @@
-cmd_arch/arm/plat-versatile/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o arch/arm/plat-versatile/built-in.o arch/arm/plat-versatile/clock.o arch/arm/plat-versatile/clcd.o arch/arm/plat-versatile/fpga-irq.o arch/arm/plat-versatile/sched-clock.o 

@@ -1,1 +1,0 @@
-cmd_arch/arm/plat-kona/chal/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o arch/arm/plat-kona/chal/built-in.o arch/arm/plat-kona/chal/chal_aci.o arch/arm/plat-kona/chal/chal_trace.o arch/arm/plat-kona/chal/chal_sspi.o 

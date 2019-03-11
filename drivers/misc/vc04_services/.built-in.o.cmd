@@ -1,1 +1,0 @@
-cmd_drivers/misc/vc04_services/built-in.o :=  /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/misc/vc04_services/built-in.o drivers/misc/vc04_services/vc-vchiq.o drivers/misc/vc04_services/vc-vchiq-memdrv-kona.o 
